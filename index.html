@@ -39,8 +39,14 @@
 						var s = q.get("server");
 						if(s) window.eaglercraftOpts.joinServer = s;
 					}
-					
-					main();
+if (typeof main === "function") {
+    console.log("Đã tìm thấy hàm main, đang khởi động game...");
+    main();
+} else {
+    console.error("LỖI: Không tìm thấy hàm main()! File classes.js chưa được nạp.");
+    alert("Lỗi: Trình duyệt không tìm thấy file classes.js hoặc file này bị lỗi. Hãy kiểm tra lại thư mục game!");
+}
+
 				}
 			});
 		</script>
